@@ -1,12 +1,14 @@
 
 import React, { useState } from 'react'; 
 import ErrorPage from 'next/error'; 
-import { GetServerSideProps, GetStaticProps} from 'next';
-import axios from 'axios'
 import SidebarNav from '../src/components/SideNav';
 import MiddlePane from '../src/components/MiddlePane'; 
-import UpComingSession from '../src/components/Session';
-import { UpComingSession } from '../src/components/Session'
+import JobPosting from '../src/components/JobPosting';
+import { fetchApi, baseUrl } from '../src/utils/fetchAPI'
+import { InferGetStaticPropsType, GetStaticProps } from "next";
+import Header from '../src/components/Header'
+import { UpcomingSessionType} from '../src/components/MiddlePane'
+
 
 import {
     Flex,
@@ -14,36 +16,46 @@ import {
 } from '@chakra-ui/react';
 
 
-type Props = {
-    result: any
-}
 
-export default function Dashboard({ result }: Props) {
-    // console.log('data', result)
-    // if(!result){
-    //     <ErrorPage statusCode={404}/>
-    // }
 
+ const Dashboard = (props:Data) => {
+     const { 
+         dashboard_stats, 
+         full_name, 
+          job_postings, 
+          upcoming_sessions
+     } = props
+    if(!props){
+        <ErrorPage statusCode={404}/>
+    }
+
+    //InferGetStaticPropsType
 
     return (
-        <Flex
-            h={[null, null, "100vh"]}
-            maxW="2000px"
-            flexDir={["column", "column", "row"]}
-            overflow="hidden"
-        >
-            {/* Column 1 */}
-            <SidebarNav />
+        <>
+            <Header />
+            <Flex
+                h={[null, null, "100vh"]}
+                maxW="2000px"
+                flexDir={["column", "column", "row"]}
+                overflow="hidden"
+            >
+                {/* Column 1 */}
+                <SidebarNav />
 
-            {/* Column 2 */}
-            <MiddlePane />
+                {/* Column 2 */}
+                <MiddlePane props={upcoming_sessions}/>
 
-            {/* Column 3 */}
-            <UpComingSession context={result}/>
-        </Flex>
+                {/* Column 3 */}
+                <JobPosting props={job_postings} key={1}/>
+            </Flex>
+        </>
+
     )
 }
 
+
+export default Dashboard
 
 
 type DashboardStat = {
@@ -66,7 +78,7 @@ type JobPosting = {
 type Data = {
     full_name: string; 
     dashboard_stats:DashboardStat[];
-    upcoming_sessions: UpcomingSession[]; 
+    upcoming_sessions: UpcomingSessionType; 
     job_postings: JobPosting[]; 
 
 }
@@ -74,14 +86,17 @@ type Data = {
 export const getStaticProps = async () => {
     try{
 
-        const res = await fetch('https://mocki.io/v1/bb11aecd-ba61-44b9-9e2c-beabc442d818')
-        const context: Data = await res.json()
+        const res = await fetchApi(baseUrl)
+        console.log(res?.upcoming_sessions)
 
 
         return {
             props: {
-                context
-              
+                full_name: res?.full_name,
+                dashboard_stats: res?.dashboard_stats,
+                upcoming_sessions:res?.upcoming_sessions,    
+                job_postings: res?.job_postings,
+
             }
         }
 
