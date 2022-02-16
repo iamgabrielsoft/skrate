@@ -5,6 +5,9 @@ type Data = {
   name: string
 }
 
+
+//https://mocki.io/v1/bb11aecd-ba61-44b9-9e2c-beabc442d818
+
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
