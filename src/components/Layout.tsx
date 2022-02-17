@@ -4,12 +4,11 @@ import Header from './Header'
 
 
 type Props = {
-    full_name: React.ReactChild;
     children?: React.ReactNode
 }
 
 
-const Layout = ({ full_name, children }: Props) => {
+const Layout = ({ children }: Props) => {
     return (
         <>
            <Head>    
