@@ -21,11 +21,11 @@ const OverView = (dashboard_stats: DashboardStat) => {
                 </Flex>
                 <Button>Dashboard</Button>
             </Flex>
-            <Grid templateColumns='repeat(5, 1fr)'  gap={10} width={500} > 
+            <Grid templateColumns='repeat(5, 1fr)'  gap={10} width={500} alignItems="center"> 
                 <GridItem colSpan={2} h='100px' bg='gray'>
                     <Flex justifyContent="space-between" mt={8}>
                         <Flex display={"flex"} >
-                            <Heading as="h4" size="md" letterSpacing="tight">Profile Views</Heading>
+                            <Heading as="h6" size="md" letterSpacing="tight">Profile Views</Heading>
                              <Heading as="h2" justifyContent="space-between" size="lg" color={"blue.100"}>{dashboard_stats.profile_views}</Heading>
                         </Flex>
                     </Flex>
@@ -33,7 +33,7 @@ const OverView = (dashboard_stats: DashboardStat) => {
                 <GridItem colSpan={2} h='100px' bg='gray'>
                     <Flex justifyContent="space-between" mt={8}>
                         <Flex display={"flex"}>
-                            <Heading as="h4" size="md" letterSpacing="tight">Mentorship Session</Heading>
+                            <Heading as="h6" size="md" letterSpacing="tight">Mentorship Session</Heading>
                             <Heading as="h2" size="lg" color={"blue.100"}>{dashboard_stats.mentorship_sessions}</Heading>
                         </Flex>
                     </Flex>
@@ -41,7 +41,7 @@ const OverView = (dashboard_stats: DashboardStat) => {
                 <GridItem colSpan={2} h='100px' bg='gray'>
                     <Flex justifyContent="space-between" mt={8}>
                         <Flex display={"flex"}>
-                            <Heading as="h4" size="md" letterSpacing="tight">Jobs Applied</Heading>
+                            <Heading as="h6" size="md" letterSpacing="tight">Jobs Applied</Heading>
                             <Heading as="h2" size="lg" color={"blue.100"}>{dashboard_stats.jobs_applied}</Heading>
                         </Flex>
                     </Flex>
@@ -49,7 +49,7 @@ const OverView = (dashboard_stats: DashboardStat) => {
                 <GridItem colSpan={2} h='100px' bg='gray'>
                     <Flex justifyContent="space-between" mt={8}>
                             <Flex display={"flex"}>
-                                <Heading as="h4" size="md" letterSpacing="tight">Skills Verified</Heading>
+                                <Heading as="h6" size="md" letterSpacing="tight">Skills Verified</Heading>
                                 <Heading as="h2" size="lg" color={"blue.100"}>{dashboard_stats.skills_verified}</Heading>
                             </Flex>
                         </Flex>
