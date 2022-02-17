@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { ChakraProvider } from "@chakra-ui/react"
 import { extendTheme } from '@chakra-ui/react'
 import Layout from '../src/components/Layout'
-
+import Head from 'next/head';
 const colors = {
   brand: {
     900: '#1a365d',
@@ -18,11 +18,17 @@ const theme = extendTheme({ colors })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-      <ChakraProvider>
+    <>
+        <Head>    
+            <title>sktrata</title>
+        </Head>
+        <ChakraProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-    </ChakraProvider>
+      </ChakraProvider>
+    </>
+
   )
 }
 
