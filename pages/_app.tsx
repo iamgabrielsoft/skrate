@@ -1,32 +1,25 @@
+import '../src/common/global.css'; 
 import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from "@chakra-ui/react"
-import { extendTheme } from '@chakra-ui/react'
-import Layout from '../src/components/Layout'
+import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
-const colors = {
-  brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
-}
+import DashboardLayout from '../src/components/DashboardLayout';
+import { theme } from '../src/common/theme'
 
 
-const theme = extendTheme({ colors })
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
         <Head>    
-            <title>sktrata</title>
+            <title>Grade-arc</title>
         </Head>
-        <ChakraProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ChakraProvider>
+      <ThemeProvider theme={theme}>
+          <DashboardLayout>
+              <Component {...pageProps} />
+          </DashboardLayout>
+      </ThemeProvider>
     </>
 
   )
