@@ -179,6 +179,7 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
                 }}
                 variant="permanent"
                 >
+                   <LogoBag sx={{ height: 42, width: 42 }} />
                 {content}
             </Drawer>
         )

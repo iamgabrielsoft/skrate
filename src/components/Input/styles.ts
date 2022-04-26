@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 
-export const Input = styled.input`
+export const SearchInput = styled.input`
     font-size: 14px;
     line-height: 1;
     background-color: transparent;

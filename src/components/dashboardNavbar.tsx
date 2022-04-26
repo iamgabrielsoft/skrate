@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const DashboardNavbarRoot = styled(AppBar)(({ theme }) => ({
     color: 'black',
+    backgroundColor: "transparent"
     // backgroundColor: theme.pallete.background.paper,
     // boxShadow: theme.shadows[3]
 }))
@@ -28,6 +29,7 @@ const DashboardNavbar = ({ onSidebarOpen }: Props) => {
                 px: 2
               }}
             >
+              
           <IconButton
             onClick={onSidebarOpen}
             sx={{
@@ -39,7 +41,7 @@ const DashboardNavbar = ({ onSidebarOpen }: Props) => {
           >
             <MenuIcon fontSize="small" />
           </IconButton>
-          <Typography variant="h4" component="div">Your Dashboard</Typography> 
+          <Typography variant="h5" component="div">Your Dashboard</Typography> 
           <Box sx={{ flexGrow: 1 }} />
             <Tooltip title="Contacts">
               <IconButton sx={{ ml: 1 }}>

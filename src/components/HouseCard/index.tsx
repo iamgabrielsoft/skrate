@@ -18,7 +18,7 @@ const PropertyCard = () => {
           <CardMedia
             component="img"
             height="140"
-            image="../../images/download.jpg"
+            image="../../../images/download.jpg"
             alt="boston_house"
           />
           <CardContent>
@@ -27,10 +27,19 @@ const PropertyCard = () => {
               Lizards are a widespread group of squamate reptiles, with over 6,000
               species, ranging across all continents except Antarctica
             </Typography>
-            <Grid >
-                <LocationOnIcon /> Boston 
-                <RoomServiceIcon /> Bedroom 
-                <CleaningServicesIcon />
+            <Grid container spacing={3}>
+                <Grid item lg={4} md={6} xs={12}>
+                  <LocationOnIcon /> Boston 
+                </Grid>
+                <Grid item lg={4} md={6} xs={12}>
+                  <RoomServiceIcon /> Bedroom 
+                </Grid>
+                <Grid item lg={4} md={6} xs={12}>
+                    <CleaningServicesIcon /> Boston 
+                </Grid>
+                
+                
+               
             </Grid>
           </CardContent>
         </CardActionArea>
