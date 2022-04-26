@@ -1,5 +1,5 @@
 
-import { Box, Grid, Typography, InputBase } from "@mui/material";
+import { Box, Grid, Typography, InputBase, Container} from "@mui/material";
 import type { NextPage } from "next";
 import { styled, alpha } from '@mui/material/styles';
 import DisplayCard from "../src/components/DisplayCard";
@@ -54,76 +54,74 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 
-const Separator = () => {
-    return (
-        <Box sx={{}}>
 
-        </Box>
-    )
-}
 
 
 
 const Home: NextPage = () => {
     return (
         <DashboardLayout>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={3}>
-                    <Grid item lg={4} md={6} xs={12}>
-                        <DisplayCard />
+            <Box component="main" sx={{ flexGrow: 1, marginRight: 20}}>
+                <Container maxWidth="lg">
+                    <Grid container spacing={3}>
+                        <Grid item lg={4} md={6} xs={12}>
+                            <DisplayCard />
+                        </Grid>
+                        <Grid item lg={4} md={6} xs={12}>
+                            <DisplayCard />
+                        </Grid>
+                        <Grid item lg={4}  md={6} xs={12}>
+                            <DisplayCard />
+                        </Grid>
                     </Grid>
-                    <Grid item lg={4} md={6} xs={12}>
-                        <DisplayCard />
+
+                <Grid container spacing={2} sx={{ paddingTop: 5, paddingBottom: 5}}>
+                    <Grid item xs={6} md={8}>
+                        <Typography variant="h5" component="div">Your favourites</Typography>
                     </Grid>
-                    <Grid item lg={4}  md={6} xs={12}>
-                        <DisplayCard />
+
+                    <Grid>
+                        <Search>
+                            <SearchIconWrapper>
+                            <SearchIcon />
+                            </SearchIconWrapper>
+                                <StyledInputBase
+                                placeholder="Search…"
+                                inputProps={{ 'aria-label': 'search' }}
+                                />
+                        </Search>
                     </Grid>
                 </Grid>
+
+                <Grid container spacing={10} sx={{ paddingTop: 5, paddingBottom: 5}}>
+                    <Grid item lg={4} md={6} xs={12}>
+                        <HouseCard />
+                    </Grid>
+                    <Grid item lg={4} md={6} xs={12}>
+                        <HouseCard />
+                    </Grid>
+                    <Grid item lg={4} md={6} xs={12}>
+                        <HouseCard />
+                    </Grid>
+                    
+                </Grid>
+                
+                <Grid container spacing={10}>
+                    <Grid item lg={4} md={6} xs={12}>
+                        <HouseCard />
+                    </Grid>
+                    <Grid item lg={4} md={6} xs={12}>
+                        <HouseCard />
+                    </Grid>
+                    <Grid item lg={4} md={6} xs={12}>
+                        <HouseCard />
+                    </Grid>
+                    
+                </Grid>
+                </Container>
             </Box>
 
-            <Grid container spacing={2} sx={{ paddingTop: 5, paddingBottom: 5}}>
-                <Grid item xs={6} md={8}>
-                    <Typography variant="h5" component="div">Your favourites</Typography>
-                </Grid>
 
-                <Grid>
-                    <Search>
-                        <SearchIconWrapper>
-                        <SearchIcon />
-                        </SearchIconWrapper>
-                            <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                            />
-                    </Search>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={3} sx={{ paddingTop: 5, paddingBottom: 5}}>
-                <Grid item lg={4} md={6} xs={12}>
-                    <HouseCard />
-                </Grid>
-                <Grid item lg={4} md={6} xs={12}>
-                    <HouseCard />
-                </Grid>
-                <Grid item lg={4} md={6} xs={12}>
-                    <HouseCard />
-                </Grid>
-                
-            </Grid>
-            <Separator />
-            <Grid container spacing={3}>
-                <Grid item lg={4} md={6} xs={12}>
-                    <HouseCard />
-                </Grid>
-                <Grid item lg={4} md={6} xs={12}>
-                    <HouseCard />
-                </Grid>
-                <Grid item lg={4} md={6} xs={12}>
-                    <HouseCard />
-                </Grid>
-                
-            </Grid>
         </DashboardLayout>
         
     )

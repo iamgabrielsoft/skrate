@@ -24,7 +24,7 @@ const PropertyCard = () => {
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">Boston Family House</Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
+              Boston are a widespread group of squamate reptiles, with over 6,000
               species, ranging across all continents except Antarctica
             </Typography>
             <Grid container spacing={3}>

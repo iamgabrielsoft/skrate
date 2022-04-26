@@ -70,6 +70,8 @@ const items = [
 ];
 
 
+
+
 const loweritems =[
   {
     href: '/documentation',
@@ -81,18 +83,11 @@ const loweritems =[
 
 
 const DashboardSidebar = ({ onClose, open }: Props) => {
-
     const theme = useTheme();
-    // const location = useLocation()
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'), {
         defaultMatches: true,
         noSsr: false
     });
-
-
-    // useEffect(() => {
-    //     console.log(location.pathname)
-    //   }, [location])
 
 
       const content = (
@@ -100,6 +95,7 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
           <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%'}}>
             <div>
               <Box sx={{ p: 3 }}>
+                
                 <Link href="#" >
                   <a>
                     <LogoBag sx={{ height: 42, width: 42 }}
@@ -179,7 +175,7 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
                 }}
                 variant="permanent"
                 >
-                   <LogoBag sx={{ height: 42, width: 42 }} />
+                   {/* <LogoBag sx={{ height: 42, width: 42 }} /> */}
                 {content}
             </Drawer>
         )
@@ -201,7 +197,7 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
             sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
             variant="temporary"
         >
-           {/* { content } */}
+           { content }
         </Drawer>
     )
 }
