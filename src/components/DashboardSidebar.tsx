@@ -95,7 +95,6 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
           <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%'}}>
             <div>
               <Box sx={{ p: 3 }}>
-                
                 <Link href="#" >
                   <a>
                     <LogoBag sx={{ height: 42, width: 42 }}
@@ -163,6 +162,7 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
 
       if(lgUp) {
         return (
+          <>
             <Drawer
                 anchor="left"
                 open
@@ -175,30 +175,36 @@ const DashboardSidebar = ({ onClose, open }: Props) => {
                 }}
                 variant="permanent"
                 >
-                   {/* <LogoBag sx={{ height: 42, width: 42 }} /> */}
                 {content}
             </Drawer>
+          </>
+
         )
       }
 
 
     return (
-        <Drawer
-            anchor="left"
-            onClose={onClose}
-            open={open}
-            PaperProps={{
-            sx: {
-                backgroundColor: 'neutral.900',
-                color: '#FFFFFF',
-                width: 280
-            }
-            }}
-            sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
-            variant="temporary"
-        >
-           { content }
-        </Drawer>
+      <>
+        
+          <Drawer
+              anchor="left"
+              onClose={onClose}
+              open={open}
+              PaperProps={{
+              sx: {
+                  backgroundColor: 'neutral.900',
+                  color: '#FFFFFF',
+                  width: 280
+              }
+              }}
+              sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
+              variant="temporary"
+          >
+            
+            { content }
+          </Drawer>
+      </>
+
     )
 }
 

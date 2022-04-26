@@ -12,6 +12,7 @@ import DashboardLayout from "../src/components/DashboardLayout";
 import BostonHouse from '../src/static/couch.png'
 
 
+
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,

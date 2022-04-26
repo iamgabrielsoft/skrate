@@ -10,7 +10,7 @@ import RoomServiceIcon from '@mui/icons-material/RoomService';
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 import Badge from '../../images/couch.png'
 import Image from 'next/image'
-import BostonHouse from '../../static/couch.png'
+import BostonHouse from '../../static/fridge.png'
 
 
 
@@ -24,15 +24,16 @@ type Props = {
 
 
 const PropertyCard = ({ imageurl }: Props) => {
-
   const styles = {
     media: {
       height: 0,
       paddingTop: '56.25%', // 16:9,
-      marginTop:'30'
+      marginTop:'10', 
+      src: require("../../static/couch.png")
     }
-};
-    return (
+  };
+
+  return (
         <Card sx={{ maxWidth: 400, width: 300 }}>
           <CardActionArea>
             <CardMedia
@@ -61,9 +62,7 @@ const PropertyCard = ({ imageurl }: Props) => {
                   </Grid>
                   <Grid item lg={4} md={6} xs={12}>
                       <CleaningServicesIcon /> Boston 
-                  </Grid>
-                  
-                  
+                  </Grid>        
                 
               </Grid>
             </CardContent>

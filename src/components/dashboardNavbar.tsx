@@ -8,7 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const DashboardNavbarRoot = styled(AppBar)(({ theme }) => ({
     color: 'black',
-    backgroundColor: "transparent"
+    backgroundColor: "transparent", 
+
     // backgroundColor: theme.pallete.background.paper,
     // boxShadow: theme.shadows[3]
 }))
@@ -20,7 +21,8 @@ type Props = {
 
 const DashboardNavbar = ({ onSidebarOpen }: Props) => {
     return (
-        <DashboardNavbarRoot sx={{left: {lg: 280},  width: {lg: 'calc(100% - 280px)'}} } >
+        <DashboardNavbarRoot sx={{left: {lg: 280},  width: {lg: 'calc(100% - 280px)'}} }>
+         
           <Toolbar
               disableGutters
               sx={{
