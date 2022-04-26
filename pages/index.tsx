@@ -96,25 +96,25 @@ const Home: NextPage = () => {
 
                 <Grid container spacing={10} sx={{ paddingTop: 5, paddingBottom: 5}}>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard />
+                        <HouseCard imageurl={require("../src/static/door-house.png")}/>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard />
+                        <HouseCard imageurl={require("../src/static/white.png")}/>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard />
+                        <HouseCard imageurl={require("../src/static/couch.png")}/>
                     </Grid>
                 </Grid>
                 
                 <Grid container spacing={10}>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard imageurl="https://ibb.co/XyD2fpq"/>
+                        <HouseCard imageurl={require("../src/static/swiming_pool.png")}/>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard imageurl="https://ibb.co/XyD2fpq"/>
+                        <HouseCard imageurl={require("../src/static/roof.png")}/>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard imageurl="https://ibb.co/XyD2fpq"/>
+                        <HouseCard imageurl={require("../src/static/fridge.png")}/>
                     </Grid>
                     
                 </Grid>
