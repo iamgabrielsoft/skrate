@@ -8,25 +8,38 @@ import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
+import Badge from '../../images/couch.png'
+import Image from 'next/image'
+import BostonHouse from '../../static/couch.png'
 
-// import BostonHouse from '../../images/download.jpg'
 
-const PropertyCard = () => {
+
+
+
+type Props = {
+  imageurl?: string | undefined; 
+}
+
+
+const PropertyCard = ({ imageurl }: Props) => {
     return (
         <Card sx={{ maxWidth: 400, width: 300 }}>
         <CardActionArea>
           <CardMedia
             component="img"
             height="140"
-            image="../../../images/download.jpg"
+            image={imageurl}
             alt="boston_house"
-          />
+          /> 
+          
+          <Image src={BostonHouse} alt="boston"/>
+          
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">Boston Family House</Typography>
             <Typography variant="body2" color="text.secondary">
               Boston are a widespread group of squamate reptiles, with over 6,000
               species, ranging across all continents except Antarctica
-            </Typography>
+            </Typography>    
             <Grid container spacing={3}>
                 <Grid item lg={4} md={6} xs={12}>
                   <LocationOnIcon /> Boston 

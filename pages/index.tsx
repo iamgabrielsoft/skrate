@@ -9,6 +9,7 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import SearchIcon from '@mui/icons-material/Search';
 import DashboardLayout from "../src/components/DashboardLayout";
 
+import BostonHouse from '../src/static/couch.png'
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -103,18 +104,17 @@ const Home: NextPage = () => {
                     <Grid item lg={4} md={6} xs={12}>
                         <HouseCard />
                     </Grid>
-                    
                 </Grid>
                 
                 <Grid container spacing={10}>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard />
+                        <HouseCard imageurl="https://ibb.co/XyD2fpq"/>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard />
+                        <HouseCard imageurl="https://ibb.co/XyD2fpq"/>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <HouseCard />
+                        <HouseCard imageurl="https://ibb.co/XyD2fpq"/>
                     </Grid>
                     
                 </Grid>
